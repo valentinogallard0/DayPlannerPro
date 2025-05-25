@@ -39,7 +39,7 @@ struct ContentView: View {
             }
             .navigationBarHidden(true)
             .sheet(isPresented: $showingAddTask) {
-                AddTaskView(
+                ModernAddTaskView(
                     tasks: $tasks,
                     presetDate: viewMode == .calendar ? selectedDate : nil
                 )
@@ -53,7 +53,7 @@ struct ContentView: View {
             }
             .sheet(item: $editingTask) { task in
                 // Aquí iría EditTaskView cuando lo implementemos
-                AddTaskView(tasks: $tasks)
+                ModernAddTaskView(tasks: $tasks)
             }
             .sheet(isPresented: $showingDatePicker) {
                 DatePickerSheet(selectedDate: $selectedDate)
